@@ -73,10 +73,9 @@ export class OSBotPathConverter extends OSBotConverter {
             var output = `List&lt;${this.javaPosition}&gt; path = Arrays.asList(\n    new ${this.javaPosition}[]{\n`;
             for (var i = 0; i < path.positions.length; i++) {
                 output += `        new ${this.javaPosition}(${path.positions[i].x}, ${path.positions[i].y}, ${path.positions[i].z})`;
-                if (i != path.positions.length - 1) output += ",";
-                output += "\n";
+                if (i != path.positions.length - 1) output += ", ";
             }
-            output += "    }\n);";
+            output += "    });\n";
             return output;
         }
         return "";
