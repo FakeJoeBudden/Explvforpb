@@ -46,13 +46,13 @@ export class OSBotAreasConverter extends OSBotConverter {
     toRaw(areas) {
         var output = "";
         for (var i = 0; i < areas.areas.length; i++) {
-            output += `${areas.areas[i].startPosition.x},${areas.areas[i].startPosition.y},${areas.areas[i].endPosition.x},${areas.areas[i].endPosition.y}\n`;
+            output += `${areas.areas[i].startPosition.x},${areas.areas[i].startPosition.y,${areas.areas[i].startPosition.z},${areas.areas[i].endPosition.x},${areas.areas[i].endPosition.y, ${areas.areas[i].endPosition.z}\n`;
         }
         return output;
     }
     
     toJavaSingle(area) {
-        var areaDef = `new ${this.javaArea}(${area.startPosition.x}, ${area.startPosition.y}, ${area.endPosition.x}, ${area.endPosition.y})`;
+        var areaDef = `new ${this.javaArea}(${area.startPosition.x}, ${area.startPosition.y}, ${area.startPosition.z}, ${area.endPosition.x}, ${area.endPosition.y, ${area.startPosition.z}})`;
         if (area.startPosition.z > 0) {
             areaDef += `.setPlane(${area.startPosition.z})`;
         }
