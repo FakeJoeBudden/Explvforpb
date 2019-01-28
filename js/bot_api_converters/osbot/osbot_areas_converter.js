@@ -46,13 +46,13 @@ export class OSBotAreasConverter extends OSBotConverter {
     toRaw(areas) {
         var output = "";
         for (var i = 0; i < areas.areas.length; i++) {
-            output += `${areas.areas[i].startPosition.x},${areas.areas[i].startPosition.y,${areas.areas[i].startPosition.z},${areas.areas[i].endPosition.x},${areas.areas[i].endPosition.y, ${areas.areas[i].endPosition.z}\n`;
+            output += `${areas.areas[i].startPosition.x},${areas.areas[i].startPosition.y},${areas.areas[i].endPosition.x},${areas.areas[i].endPosition.y}\n`;
         }
         return output;
     }
     
     toJavaSingle(area) {
-        var areaDef = `new ${this.javaArea}(${area.startPosition.x}, ${area.startPosition.y}, ${area.startPosition.z}, ${area.endPosition.x}, ${area.endPosition.y, ${area.startPosition.z}})`;
+        var areaDef = `new ${this.javaArea}(${area.startPosition.x}, ${area.startPosition.y}, ${area.endPosition.x}, ${area.endPosition.y})`;
         if (area.startPosition.z > 0) {
             areaDef += `.setPlane(${area.startPosition.z})`;
         }
@@ -63,7 +63,7 @@ export class OSBotAreasConverter extends OSBotConverter {
         if (areas.areas.length === 1) {
             return `public static ${this.javaArea} area = ` + this.toJavaSingle(areas.areas[0]) + `;`;
         } else if (areas.areas.length > 1) {
-            var output = `public static ${this.javaArea}[] area = {\n`;
+            var output = `${this.javaArea}[] area = {\n`;
             for (var i = 0; i < areas.areas.length; i++) {
                 output += "    " + this.toJavaSingle(areas.areas[i]);
                 if (i !== areas.areas.length - 1) {
