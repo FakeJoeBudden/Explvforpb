@@ -61,9 +61,9 @@ export class OSBotAreasConverter extends OSBotConverter {
     
     toJavaArray(areas) {
         if (areas.areas.length === 1) {
-            return `public static ${this.javaArea} area = ` + this.toJavaSingle(areas.areas[0]) + `;`;
+            return `${this.javaArea} area = ` + this.toJavaSingle(areas.areas[0]) + `;`;
         } else if (areas.areas.length > 1) {
-            var output = `public static ${this.javaArea}[] area = {`;
+            var output = `${this.javaArea}[] area = {`;
             for (var i = 0; i < areas.areas.length; i++) {
                 output += this.toJavaSingle(areas.areas[i]);
                 if (i !== areas.areas.length - 1) {
@@ -78,9 +78,9 @@ export class OSBotAreasConverter extends OSBotConverter {
     
     toJavaList(areas) {
         if (areas.areas.length === 1) {
-            return `public static ${this.javaArea} area = ` + this.toJavaSingle(areas.areas[0]) + ";";
+            return `${this.javaArea} area = ` + this.toJavaSingle(areas.areas[0]) + ";";
         } else if (areas.areas.length > 1) {
-            var output = `public static List&lt;${this.javaArea}&gt; area = new ArrayList<>();\n`;
+            var output = `List&lt;${this.javaArea}&gt; area = new ArrayList<>();\n`;
             for (var i = 0; i < areas.areas.length; i++) {
                 output += "area.add(" + this.toJavaSingle(areas.areas[i]) + ");\n";
             }
@@ -91,9 +91,9 @@ export class OSBotAreasConverter extends OSBotConverter {
     
     toJavaArraysAsList(areas) {
         if (areas.areas.length === 1) {
-            return `public static ${this.javaArea} area = ` + this.toJavaSingle(areas.areas[0]) + ";";
+            return `${this.javaArea} area = ` + this.toJavaSingle(areas.areas[0]) + ";";
         } else if (areas.areas.length > 1) {
-            var output = `public static List&lt;${this.javaArea}&gt; area = Arrays.asList(` +
+            var output = `List&lt;${this.javaArea}&gt; area = Arrays.asList(` +
                 `    new ${this.javaArea}[]{new Tile`;
             
             for (var i = 0; i < areas.areas.length; i++) {

@@ -41,7 +41,7 @@ export class OSBotPathConverter extends OSBotConverter {
         if (path.positions.length == 1) {
             return this.toJavaSingle(path.positions[0]);
         } else if (path.positions.length > 1) {
-            var output = `public static final ${this.javaPosition}[] path = {`;
+            var output = `${this.javaPosition}[] path = {`;
             for (var i = 0; i < path.positions.length; i++) {
 				if (i != 0) { output += ` `; }
                 output += `new ${this.javaPosition}(${path.positions[i].x}, ${path.positions[i].y}, ${path.positions[i].z})`;
