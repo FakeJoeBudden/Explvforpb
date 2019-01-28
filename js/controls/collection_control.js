@@ -97,7 +97,7 @@ export var CollectionControl = L.Control.extend({
             this._copyCodeToClipboard();
         });
 
-        // Settings control
+        /* Settings control
         this._createControl('<i class="fa fa-cog"></i>', container, function(e) {
             if ($("#settings-panel").is(":visible")) {
                 $("#settings-panel").hide("slide", {direction: "right"}, 300);
@@ -109,7 +109,7 @@ export var CollectionControl = L.Control.extend({
                 $("#settings-panel").css('display', 'flex').hide();
                 $("#settings-panel").show("slide", {direction: "right"}, 300);
             }
-        });
+        });*/
 
         // Area control
         this._createControl('Area', container, function(e) {
@@ -126,10 +126,10 @@ export var CollectionControl = L.Control.extend({
             this._toggleCollectionMode(this._path, "path_converter", e.target);
         });
 
-        // Dax Path control
+        /* Dax Path control
         this._createControl('Dax Path', container, function(e) {
             this._toggleCollectionMode(this._daxPath, "path_converter", e.target);
-        });
+        });*/
 
         // Undo control
         this._createControl('<i class="fa fa-undo" aria-hidden="true"></i>', container, function(e) {
