@@ -40,10 +40,10 @@ export class DreamBotPolyAreaConverter extends OSBotPolyAreaConverter {
         if (polyarea.positions.length == 0) {
             return "";
         }
-        var output = `${this.javaArea} area = new ${this.javaArea}(\n    new ${this.javaPosition}[] {`;
+        var output = `${this.javaArea} area = new ${this.javaArea}( new ${this.javaPosition}[] {`;
         for (var i = 0; i < polyarea.positions.length; i++) {
             var position = polyarea.positions[i];
-            output += `\n        new ${this.javaPosition}(${position.x}, ${position.y}, ${position.z})`;
+            output += ` new ${this.javaPosition}(${position.x}, ${position.y}, ${position.z})`;
             if (i !== polyarea.positions.length - 1) {
                 output += ",";
             }
