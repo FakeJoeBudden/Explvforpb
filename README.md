@@ -1,4 +1,4 @@
-# https://fakejoebudden.github.io/Explvforpb/
+# https://fakejoebudden.github.io/explvforpb/
 
 ### Explv's Tool For PowerBot
 
